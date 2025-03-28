@@ -1,14 +1,14 @@
 'use server';
 
-import { signIn } from '@/auth';
+import { eq } from 'drizzle-orm';
 import { db } from '@/database/drizzle';
 import { users } from '@/database/schema';
 import { hash } from 'bcryptjs';
-import { eq } from 'drizzle-orm';
+import { signIn } from '@/auth';
 import { headers } from 'next/headers';
-import ratelimit from '../ratelimit';
+import ratelimit from '@/lib/ratelimit';
 import { redirect } from 'next/navigation';
-import { workflowClient } from '../workflow';
+import { workflowClient } from '@/lib/workflow';
 import config from '@/lib/config';
 
 export const signInWithCredentials = async (

@@ -1,11 +1,11 @@
-import { userEmails } from '@/app/constants';
+import { serve } from '@upstash/workflow/nextjs';
 import { db } from '@/database/drizzle';
 import { users } from '@/database/schema';
-import { sendEmail } from '@/lib/workflow';
-import { serve } from '@upstash/workflow/nextjs';
 import { eq } from 'drizzle-orm';
+import { sendEmail } from '@/lib/workflow';
 
 type UserState = 'non-active' | 'active';
+
 type InitialData = {
   email: string;
   fullName: string;
@@ -45,8 +45,8 @@ export const { POST } = serve<InitialData>(async (context) => {
   await context.run('new-signup', async () => {
     await sendEmail({
       email,
-      subject: userEmails.welcome.subject,
-      message: `Дорогой(ая) ${fullName}, ${userEmails.welcome.message}`,
+      subject: 'Welcome to the platform',
+      message: `Welcome ${fullName}!`,
     });
   });
 
@@ -61,16 +61,16 @@ export const { POST } = serve<InitialData>(async (context) => {
       await context.run('send-email-non-active', async () => {
         await sendEmail({
           email,
-          subject: `${userEmails.nonActive.subject} ${fullName}!`,
-          message: userEmails.nonActive.message,
+          subject: 'Are you still there?',
+          message: `Hey ${fullName}, we miss you!`,
         });
       });
     } else if (state === 'active') {
       await context.run('send-email-active', async () => {
         await sendEmail({
           email,
-          subject: userEmails.active.subject,
-          message: `Привет, ${fullName}! ${userEmails.active.message}`,
+          subject: 'Welcome back!',
+          message: `Welcome back ${fullName}!`,
         });
       });
     }
