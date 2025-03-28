@@ -20,16 +20,24 @@ export const sendEmail = async ({
   subject: string;
   message: string;
 }) => {
-  await qstashClient.publishJSON({
-    api: {
-      name: 'email',
-      provider: resend({ token: config.env.resendToken }),
-    },
-    body: {
-      from: '<contact@adil-rakhimov.ru>',
-      to: [email],
-      subject,
-      html: message,
-    },
-  });
+  try {
+    console.log('Отправка письма через QStash:', { email, subject, message });
+
+    const response = await qstashClient.publishJSON({
+      api: {
+        name: 'email',
+        provider: resend({ token: config.env.resendToken }),
+      },
+      body: {
+        from: '<contact@adil-rakhimov.ru>',
+        to: [email],
+        subject,
+        html: message,
+      },
+    });
+
+    console.log('Ответ от QStash:', response);
+  } catch (error) {
+    console.error('Ошибка при отправке письма:', error);
+  }
 };
