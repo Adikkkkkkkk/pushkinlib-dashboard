@@ -1,5 +1,5 @@
 import { Client as WorkflowClient } from '@upstash/workflow';
-import { Client as QstashClient, resend } from '@upstash/qstash';
+import { Client as QStashClient, resend } from '@upstash/qstash';
 import config from '@/lib/config';
 
 export const workflowClient = new WorkflowClient({
@@ -7,7 +7,7 @@ export const workflowClient = new WorkflowClient({
   token: config.env.upstash.qstashToken,
 });
 
-const qstashClient = new QstashClient({
+const qstashClient = new QStashClient({
   token: config.env.upstash.qstashToken,
 });
 
@@ -26,7 +26,7 @@ export const sendEmail = async ({
       provider: resend({ token: config.env.resendToken }),
     },
     body: {
-      from: 'Восточно-Казахстанская областная библиотека имени А.С. Пушкина <contact@adil-rakhimov.ru>',
+      from: '<contact@adil-rakhimov.ru>',
       to: [email],
       subject,
       html: message,
