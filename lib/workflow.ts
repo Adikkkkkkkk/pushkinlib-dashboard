@@ -26,7 +26,7 @@ export const sendEmail = async ({
       provider: resend({ token: config.env.resendToken }),
     },
     body: {
-      from: 'Восточно-Казахстанская областная библиотека им. А.С. Пушкина <hello.adil-rakhimov.ru>',
+      from: 'Восточно-Казахстанская областная библиотека имени А.С. Пушкина <contact@vko-biblioteka-imeni-a-s-pushkina.bizml.ru>',
       to: [email],
       subject,
       html: message,
