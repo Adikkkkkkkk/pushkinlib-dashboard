@@ -45,8 +45,88 @@ export const { POST } = serve<InitialData>(async (context) => {
   await context.run('new-signup', async () => {
     await sendEmail({
       email,
-      subject: userEmails.welcome.subject,
-      message: `Дорогой(ая) ${fullName}, ${userEmails.welcome.message}`,
+      subject: '📚 Добро пожаловать в библиотеку!',
+      message: `
+				<!DOCTYPE html>
+				<html lang="ru">
+				<head>
+						<meta charset="UTF-8">
+						<meta name="viewport" content="width=device-width, initial-scale=1.0">
+						<title>Добро пожаловать</title>
+						<style>
+								body {
+										font-family: Arial, sans-serif;
+										background-color: #F8F8FF;
+										margin: 0;
+										padding: 0;
+								}
+								.container {
+										max-width: 600px;
+										margin: 0 auto;
+										background-color: white;
+										border-radius: 10px;
+										box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+										overflow: hidden;
+								}
+								.header {
+										background-color: #25388C;
+										color: white;
+										padding: 20px;
+										text-align: center;
+										font-size: 24px;
+								}
+								.content {
+										padding: 20px;
+										color: #333;
+										text-align: left;
+								}
+								.btn {
+										display: block;
+										width: 80%;
+										margin: 20px auto;
+										text-align: center;
+										background-color: #027A48;
+										color: white;
+										padding: 15px;
+										font-size: 16px;
+										border-radius: 5px;
+										text-decoration: none;
+								}
+								.btn:hover {
+										background-color: #2CC171;
+								}
+								.footer {
+										background-color: #EED1AC;
+										color: #464F6F;
+										text-align: center;
+										padding: 15px;
+										font-size: 14px;
+								}
+								@media (max-width: 600px) {
+										.btn {
+												width: 90%;
+										}
+								}
+						</style>
+				</head>
+				<body>
+						<div class="container">
+								<div class="header">
+										📚 Добро пожаловать в библиотеку!
+								</div>
+								<div class="content">
+										<p>Дорогой(ая) <strong>${fullName}</strong>,</p>
+										<p>Мы рады приветствовать вас в системе бронирования книг Восточно-Казахстанской областной библиотеки им. А.С. Пушкина.</p>
+										<p>Теперь тысячи книг доступны вам всего в несколько кликов.</p>
+										<a href="https://your-library-url.com" class="btn">Перейти в каталог</a>
+								</div>
+								<div class="footer">
+										© Восточно-Казахстанская областная библиотека им. А.С. Пушкина, 2025  
+								</div>
+						</div>
+				</body>
+				</html>
+			`,
     });
   });
 

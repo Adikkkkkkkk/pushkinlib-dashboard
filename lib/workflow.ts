@@ -29,7 +29,7 @@ export const sendEmail = async ({
         provider: resend({ token: config.env.resendToken }),
       },
       body: {
-        from: 'contact@adil-rakhimov.ru',
+        from: 'Восточно Казахстанская Библиотека имени Александра Сергеевича Пушкина, contact@adil-rakhimov.ru',
         to: [email],
         subject,
         html: message,
