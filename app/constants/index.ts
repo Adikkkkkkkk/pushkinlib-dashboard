@@ -16,27 +16,27 @@ export const adminSideBarLinks = [
   {
     img: '/icons/admin/home.svg',
     route: '/admin',
-    text: 'Home',
+    text: 'Домашняя страница',
   },
   {
     img: '/icons/admin/users.svg',
     route: '/admin/users',
-    text: 'All Users',
+    text: 'Все пользователи',
   },
   {
     img: '/icons/admin/book.svg',
     route: '/admin/books',
-    text: 'All Books',
+    text: 'Все книги',
   },
   {
     img: '/icons/admin/bookmark.svg',
     route: '/admin/borrow-records',
-    text: 'Borrow Records',
+    text: 'Записи о выдаче книг',
   },
   {
     img: '/icons/admin/user.svg',
     route: '/admin/account-requests',
-    text: 'Account Requests',
+    text: 'Запросы на регистрацию',
   },
 ];
 
@@ -44,8 +44,8 @@ export const FIELD_NAMES = {
   fullName: 'Полное имя',
   email: 'Email',
   libraryId: 'Номер пропуска библиотеки',
-  password: 'Password',
-  libraryCard: 'Загрузите пропуск библиотеки',
+  password: 'Пароль',
+  libraryCard: 'Пропуск библиотеки',
 };
 
 export const FIELD_TYPES = {

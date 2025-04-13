@@ -8,6 +8,20 @@
       "when": 1742465455504,
       "tag": "0000_sad_silver_sable",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1743488102024,
+      "tag": "0001_unusual_whizzer",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1744250757738,
+      "tag": "0002_far_triton",
+      "breakpoints": true
     }
   ]
 }
