@@ -7,6 +7,7 @@ import dayjs from 'dayjs';
 
 export const borrowBook = async (params: BorrowBookParams) => {
   const { userId, bookId } = params;
+
   try {
     const book = await db
       .select({ availableCopies: books.availableCopies })
@@ -23,7 +24,7 @@ export const borrowBook = async (params: BorrowBookParams) => {
 
     const dueDate = dayjs().add(7, 'day').toDate().toDateString();
 
-    const record = db.insert(borrowRecords).values({
+    const record = await db.insert(borrowRecords).values({
       userId,
       bookId,
       dueDate,
@@ -40,8 +41,11 @@ export const borrowBook = async (params: BorrowBookParams) => {
       data: JSON.parse(JSON.stringify(record)),
     };
   } catch (error) {
-    console.error(error);
+    console.log(error);
 
-    return { success: false, error: 'Ошибка при бронировани книги' };
+    return {
+      success: false,
+      error: 'Произошла ошибка при бронировании книги',
+    };
   }
 };

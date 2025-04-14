@@ -45,7 +45,7 @@ const BorrowBook = ({ userId, bookId, borrowingEligibility }: Props) => {
           description: 'Книга успешно забронирована',
         });
 
-        router.push('/my-profile');
+        router.push('/');
       } else {
         toast({
           title: 'Ошибка',
