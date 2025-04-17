@@ -1,0 +1,18 @@
+{
+  "HomePage": {
+    "newBooks": "Жаңа кітаптар",
+    "about": "Біз туралы бетке өту"
+  },
+  "AuthForm": {
+    "greeting": {
+      "titleSignIn": "Қош келдіңіз!",
+      "titleSignUp": "Жаңа аккаунт тіркелу"
+    },
+    "susscessToast": {
+      "title": "Cәтті",
+      "descriptionSignIn": "Сіз сәтті кірдіңіз",
+      "descriptionSignUp": "Сіз сәтті тіркелдіңіз"
+    },
+    "errorToast": {}
+  }
+}

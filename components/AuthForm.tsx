@@ -25,6 +25,7 @@ import { FIELD_NAMES, FIELD_TYPES } from '@/app/constants';
 import FileUpload from './FileUpload';
 import { toast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 interface Props<T extends FieldValues> {
   schema: ZodType<T>;
@@ -41,6 +42,8 @@ const AuthForm = <T extends FieldValues>({
 }: Props<T>) => {
   const router = useRouter();
 
+  const t = useTranslations('AuthForm');
+
   const isSignIn = type === 'SIGN_IN';
   const form: UseFormReturn<T> = useForm({
     resolver: zodResolver(schema),
@@ -52,10 +55,10 @@ const AuthForm = <T extends FieldValues>({
 
     if (result.success) {
       toast({
-        title: 'Успешно',
+        title: t('susscessToast.title'),
         description: isSignIn
-          ? 'Вы успешно авторизовались.'
-          : 'Вы успешно зарегистрировались.',
+          ? t('susscessToast.descriptionSignIn')
+          : t('susscessToast.descriptionSignUp'),
       });
 
       router.push('/');
@@ -71,7 +74,7 @@ const AuthForm = <T extends FieldValues>({
   return (
     <div className="flex flex-col gap-4">
       <h1 className="text-2xl font-semibold text-white">
-        {isSignIn ? 'Добро пожаловать!' : 'Создайте аккаунт'}
+        {isSignIn ? t('greeting.titleSignIn') : t('greeting.titleSignUp')}
       </h1>
       <p className="text-light-100">
         {isSignIn

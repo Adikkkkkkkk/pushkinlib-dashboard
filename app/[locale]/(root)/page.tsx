@@ -1,13 +1,15 @@
 import React from 'react';
 import BookList from '@/components/BookList';
 import BookOverview from '@/components/BookOverview';
-import { books, users } from '@/database/schema';
+import { books } from '@/database/schema';
 import { db } from '@/database/drizzle';
 import { auth } from '@/auth';
 import { desc } from 'drizzle-orm';
+import { getTranslations } from 'next-intl/server';
 
 const Home = async () => {
   const session = await auth();
+  const t = await getTranslations('HomePage');
 
   const latestBooks = (await db
     .select()
@@ -20,7 +22,7 @@ const Home = async () => {
       <BookOverview {...latestBooks[0]} userId={session?.user?.id as string} />
 
       <BookList
-        title="Новые книги"
+        title={t('newBooks')}
         books={latestBooks.slice(1)}
         containerClassName="mt-28"
       />
