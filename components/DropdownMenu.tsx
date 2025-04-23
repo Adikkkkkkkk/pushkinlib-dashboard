@@ -47,7 +47,7 @@ const DropdownMenu = ({
       <div
         className={`
       absolute right-0 z-50 mt-2 w-48 rounded-lg bg-amber-100 text-center shadow-lg transition-all duration-300 ease-out
-      ${isOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible pointer-events-none'}
+      ${isOpen ? 'opacity-100 scale-100 visible' : 'pointer-events-none invisible scale-95 opacity-0'}
     `}
       >
         <ul className="p-2 space-y-1">

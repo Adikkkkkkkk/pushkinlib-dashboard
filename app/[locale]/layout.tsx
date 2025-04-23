@@ -6,7 +6,7 @@ import { SessionProvider } from 'next-auth/react';
 import { auth } from '@/auth';
 
 import { notFound } from 'next/navigation';
-import { NextIntlClientProvider, useMessages } from 'next-intl';
+import { NextIntlClientProvider } from 'next-intl';
 
 const ibmPlexSans = localFont({
   src: [

@@ -41,11 +41,33 @@ export const adminSideBarLinks = [
 ];
 
 export const FIELD_NAMES = {
-  fullName: 'Полное имя',
-  email: 'Email',
-  libraryId: 'Номер пропуска библиотеки',
-  password: 'Пароль',
-  libraryCard: 'Пропуск библиотеки',
+  ru: {
+    fullName: 'Полное имя',
+    email: 'Электронная почта',
+    libraryId: 'Номер читательского билета',
+    password: 'Пароль',
+    libraryCard: 'Фото/скан читательского билета',
+    libraryCardWarning:
+      'Убедитесь что читательский билет четко виден на фото, чтобы мы могли его проверить',
+  },
+  kz: {
+    fullName: 'Толық аты-жөні',
+    email: 'Электрондық пошта',
+    libraryId: 'Кітапхана картасының нөмірі',
+    password: 'Құпия сөз',
+    libraryCard: 'Кітапхана картасы',
+    libraryCardWarning:
+      'Кітапхана картасы фотосуретте анық көрінетініне көз жеткізіңіз, біз оны тексере алуымыз үшін',
+  },
+  en: {
+    fullName: 'Full name',
+    email: 'Email',
+    libraryId: 'Library card number',
+    password: 'Password',
+    libraryCard: 'Library card',
+    libraryCardWarning:
+      'Make sure the library card is clearly visible in the photo so we can verify it',
+  },
 };
 
 export const FIELD_TYPES = {
