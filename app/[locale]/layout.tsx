@@ -40,7 +40,9 @@ type Props = {
   params: { locale: string };
 };
 
-const RootLayout = async ({ children, params: { locale } }: Props) => {
+const RootLayout = async (props: Props) => {
+  const { children } = props;
+  const { locale } = await props.params;
   const session = await auth();
 
   let messages;

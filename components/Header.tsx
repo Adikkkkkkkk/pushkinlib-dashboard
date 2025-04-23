@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Session } from 'next-auth';
 import { usePathname } from 'next/navigation';
 import DropdownMenu from '@/components/DropdownMenu';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Header = ({ session }: { session: Session }) => {
   const pathname = usePathname();
@@ -17,7 +18,11 @@ const Header = ({ session }: { session: Session }) => {
         <Image src="/icons/logo.svg" alt="logo" width={40} height={40} />
       </Link>
 
-      <ul className="flex flex-row items-start justify-center gap-8 font-normal">
+      <ul className="flex flex-row items-center justify-center gap-8 font-normal">
+        <li>
+          <LanguageSwitcher />
+        </li>
+
         <li className="order-2">
           <DropdownMenu
             currentLocale={currentLocale}

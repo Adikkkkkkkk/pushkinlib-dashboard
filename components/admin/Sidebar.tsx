@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Avatar, AvatarFallback } from '../ui/avatar';
 import { Session } from 'next-auth';
+import AdminLanguageSwitcher from '@/components/admin/AdminLanguageSwitcher';
 
 const Sidebar = ({ session }: { session: Session }) => {
   const pathname = usePathname();
@@ -13,23 +14,28 @@ const Sidebar = ({ session }: { session: Session }) => {
   return (
     <div className="admin-sidebar">
       <div>
-        <div className="logo">
-          <Image
-            src="/icons/admin/logo.svg"
-            alt="logo"
-            width={37}
-            height={37}
-          />
-          <h1>Pushkin Library</h1>
-        </div>
+        <Link href="/">
+          <div className="logo">
+            <Image
+              src="/icons/admin/logo.svg"
+              alt="logo"
+              width={37}
+              height={37}
+            />
+            <h1>Pushkin Library</h1>
+          </div>
+        </Link>
 
         <div className="mt-10 flex flex-col gap-5">
           {adminSideBarLinks.map((link) => {
+            const linkPath = link.route.slice(1);
+            const currentPath = pathname.split('/').slice(2).join('/');
+
             const isSelected =
-              (link.route !== '/admin' &&
-                pathname.includes(link.route) &&
-                link.route.length > 1) ||
-              pathname === link.route;
+              linkPath === 'admin'
+                ? currentPath === 'admin'
+                : currentPath === linkPath ||
+                  currentPath.startsWith(linkPath + '/');
 
             return (
               <Link href={link.route} key={link.route}>
@@ -55,6 +61,7 @@ const Sidebar = ({ session }: { session: Session }) => {
               </Link>
             );
           })}
+          <AdminLanguageSwitcher />
         </div>
       </div>
 
