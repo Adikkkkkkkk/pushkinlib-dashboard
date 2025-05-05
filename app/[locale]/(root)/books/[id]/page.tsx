@@ -6,10 +6,13 @@ import { redirect } from 'next/navigation';
 import BookOverview from '@/components/BookOverview';
 import { auth } from '@/auth';
 import BookVideo from '@/components/BookVideo';
+import { getLocale } from 'next-intl/server';
 
 const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const id = (await params).id;
   const session = await auth();
+
+  const locale = await getLocale();
 
   //Фетчинг данных книги по id
   const [bookDetails] = await db
@@ -18,13 +21,19 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
     .where(eq(books.id, id))
     .limit(2);
 
+  const summary = (bookDetails.summary as any)?.[locale] || '';
+
   if (!bookDetails) redirect('/404');
 
   console.log(bookDetails);
 
   return (
     <>
-      <BookOverview {...bookDetails} userId={session?.user?.id as string} />
+      <BookOverview
+        {...bookDetails}
+        userId={session?.user?.id as string}
+        locale={locale}
+      />
 
       <div className="book-details">
         <div className="flex-[1.5]">
@@ -37,7 +46,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
             <h3>Краткое описаниие</h3>
 
             <div className="space-y-5 text-xl text-light-100">
-              {bookDetails.summary.split('\n').map((line, i) => (
+              {summary.split('\n').map((line, i) => (
                 <p key={i}>{line}</p>
               ))}
             </div>

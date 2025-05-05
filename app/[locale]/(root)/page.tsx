@@ -5,11 +5,12 @@ import { books } from '@/database/schema';
 import { db } from '@/database/drizzle';
 import { auth } from '@/auth';
 import { desc } from 'drizzle-orm';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, getLocale } from 'next-intl/server';
 
 const Home = async () => {
   const session = await auth();
   const t = await getTranslations('HomePage');
+  const locale = await getLocale();
 
   const latestBooks = (await db
     .select()
@@ -17,14 +18,23 @@ const Home = async () => {
     .limit(10)
     .orderBy(desc(books.createdAt))) as Book[];
 
+  const hasBooks = latestBooks.length > 0;
+
   return (
     <>
-      <BookOverview {...latestBooks[0]} userId={session?.user?.id as string} />
+      {hasBooks && (
+        <BookOverview
+          {...latestBooks[0]}
+          userId={session?.user?.id as string}
+          locale={locale}
+        />
+      )}
 
       <BookList
         title={t('newBooks')}
         books={latestBooks.slice(1)}
         containerClassName="mt-28"
+        locale={locale}
       />
     </>
   );

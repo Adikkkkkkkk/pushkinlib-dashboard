@@ -5,9 +5,11 @@ import BorrowBook from './BorrowBook';
 import { db } from '@/database/drizzle';
 import { users } from '@/database/schema';
 import { eq } from 'drizzle-orm';
+import { getTranslations } from 'next-intl/server';
 
 interface Props extends Book {
   userId: string;
+  locale: 'kk' | 'ru' | 'en';
 }
 
 const BookOverview = async ({
@@ -22,6 +24,7 @@ const BookOverview = async ({
   coverUrl,
   id,
   userId,
+  locale,
 }: Props) => {
   const [user] = await db
     .select()
@@ -31,25 +34,29 @@ const BookOverview = async ({
 
   if (!user) return null;
 
+  const t = await getTranslations('BookOverview');
+
   const borrowingEligibility = {
     isEligible: availableCopies > 0 && user.status === 'APPROVED',
     message:
       availableCopies <= 0
-        ? 'Книга недоступна для бронирования'
-        : 'Вам отказано в бронировании',
+        ? t('borrowingEligibilityTrue')
+        : t('borrowingEligibilityFalse'),
   };
 
   return (
     <section className="book-overview">
       <div className="flex flex-1 flex-col gap-5">
-        <h1>{title}</h1>
+        <h1>{title[locale]}</h1>
 
         <div className="book-info">
           <p>
-            Автор <span className="font-semibold text-light-200">{author}</span>
+            Автор{' '}
+            <span className="font-semibold text-primary">{author[locale]}</span>
           </p>
           <p>
-            Жанр <span className="font-semibold text-light-200">{genre}</span>
+            Жанр{' '}
+            <span className="font-semibold text-primary">{genre[locale]}</span>
           </p>
 
           <div className="flex flex-row gap-1">
@@ -72,7 +79,7 @@ const BookOverview = async ({
           </p>
         </div>
 
-        <p className="book-description">{description}</p>
+        <p className="book-description">{description[locale]}</p>
 
         <BorrowBook
           bookId={id}
@@ -90,7 +97,7 @@ const BookOverview = async ({
             coverImage={coverUrl}
           />
 
-          <div className="absolute left-16 top-10 rotate-12 opacity-40 max-sm:hidden">
+          <div className="absolute left-16 top-10 rotate-12 opacity-40 blur-sm max-sm:hidden">
             <BookCover
               variant="wide"
               coverColor={coverColor}

@@ -1,114 +1,308 @@
 [
   {
     "id": "9084986f-456c-449b-ae6e-59ef1f26b129",
-    "title": "Алмазный меч",
-    "author": "Ильяс Есенберлин",
-    "genre": "Историческая проза",
+    "title": {
+      "kk": "Алмас қылыш",
+      "ru": "Алмазный меч",
+      "en": "Diamond Sword"
+    },
+    "author": {
+      "kk": "Ільяс Есенберлин",
+      "ru": "Ильяс Есенберлин",
+      "en": "Ilyas Yesenberlin"
+    },
+    "genre": {
+      "kk": "Тарихи проза",
+      "ru": "Историческая проза",
+      "en": "Historical Prose"
+    },
     "rating": 5,
     "totalCopies": 20,
     "availableCopies": 10,
-    "description": "Роман 'Алмазный меч' (Алмас қылыш) является первой частью исторической трилогии 'Кочевники' Ільяса Есенберлина. В книге рассказывается о создании Казахского ханства, борьбе Керея и Жәнібека за независимость, противостоянии с внешними врагами и становлении государства.",
+    "description": {
+      "kk": "Алмас қылыш» романы Ілияс Есенберлиннің «Көшпенділер» тарихи трилогиясының бірінші бөлімі болып табылады. Кітапта Қазақ хандығының құрылуы, Керей мен Жәнібектің тәуелсіздік үшін күресі, сыртқы жауларға қарсы тұруы және мемлекеттің қалыптасуы туралы баяндалады",
+      "ru": "Роман 'Алмазный меч' (Алмас қылыш) является первой частью исторической трилогии 'Кочевники' Ільяса Есенберлина. В книге рассказывается о создании Казахского ханства, борьбе Керея и Жәнібека за независимость, противостоянии с внешними врагами и становлении государства.",
+      "en": "The novel 'Diamond Sword' (Алмас қылыш) is the first part of the historical trilogy 'Nomads' by Ilyas Yesenberlin. The book tells about the creation of the Kazakh Khanate, the struggle of Kerey and Zhanibek for independence, resistance to external enemies, and the formation of the state."
+    },
     "coverColor": "#0d2d48",
     "coverUrl": "https://static.insales-cdn.com/r/Jo9mxYj74AM/rs:fit:1000:1000:1/plain/images/products/1/6839/426465975/1999304_550.jpg@jpg",
     "videoUrl": "https://www.youtube.com/watch?v=Hmq6brVcD-c",
-    "summary": "Роман 'Острый меч' (Алмазный меч) повествует о создании Казахского ханства в XV веке. Керей и Жәнібек уходят из-под власти Абулхаира и закладывают основу независимого государства. В книге описываются их сражения, дипломатические ходы и первые шаги к объединению казахских племен."
+    "summary": {
+      "kk": "Роман 'Алмас қылыш' XV ғасырда Қазақ хандығының құрылуы туралы баяндайды. Керей мен Жәнібек Абулхаирдың билігінен кетіп, тәуелсіз мемлекеттің негізін қалайды. Кітапта олардың шайқастары, дипломатиялық қадамдары және қазақ тайпаларын біріктірудегі алғашқы қадамдары сипатталады.",
+      "ru": "Роман 'Острый меч' (Алмазный меч) повествует о создании Казахского ханства в XV веке. Керей и Жәнібек уходят из-под власти Абулхаира и закладывают основу независимого государства. В книге описываются их сражения, дипломатические ходы и первые шаги к объединению казахских племен.",
+      "en": "The novel 'Diamond Sword' (Алмас қылыш) narrates the creation of the Kazakh Khanate in the 15th century. Kerey and Zhanibek leave the rule of Abulkhair and lay the foundation for an independent state. The book describes their battles, diplomatic moves, and first steps towards uniting the Kazakh tribes."
+    }
   },
   {
     "id": "350c3bc8-a5cc-45a3-ba16-97b93ed056b0",
-    "title": "Қара сөздер/Слова назидания",
-    "author": "Абай Құнанбаев",
-    "genre": "Казахская Классика",
+    "title": {
+      "kk": "Қара сөздер",
+      "ru": "Слова назидания",
+      "en": "Words of Edification"
+    },
+    "author": {
+      "kk": "Абай Құнанбаев",
+      "ru": "Абай Кунанбаев",
+      "en": "Abai Kunanbaev"
+    },
+    "genre": {
+      "kk": "Қазақ классикасы",
+      "ru": "Казахская классика",
+      "en": "Kazakh Classic"
+    },
     "rating": 5,
     "totalCopies": 99,
     "availableCopies": 50,
-    "description": "Сборник философских размышлений и моральных наставлений великого казахского поэта, философа и просветителя Абая Кунанбаева. Эти слова назидания остаются актуальными даже спустя века.",
+    "description": {
+      "kk": "Ұлы қазақ ақыны, философ және ағартушы Абай Құнанбаевтың философиялық ой-пікірлері мен адамгершілік насихаттарының жинағы. Бұл қара сөздер ғасырлар өткен соң да өзектілігін жойған жоқ.",
+      "ru": "Сборник философских размышлений и моральных наставлений великого казахского поэта, философа и просветителя Абая Кунанбаева. Эти слова назидания остаются актуальными даже спустя века.",
+      "en": "A collection of philosophical reflections and moral teachings by the great Kazakh poet, philosopher and educator Abai Kunanbaev. These words of edification remain relevant even centuries later."
+    },
     "coverColor": "#ffcc00",
     "coverUrl": "https://resources.cdn-kaspi.kz/img/m/p/he8/h36/69983338364958.jpg?format=gallery-medium",
     "videoUrl": "https://www.youtube.com/watch?v=wx2kc7paH7U",
-    "summary": "Сборник философских размышлений и моральных наставлений великого казахского поэта, философа и просветителя Абая Кунанбаева. Эти слова назидания остаются актуальными даже спустя века."
+    "summary": {
+      "kk": "Ұлы қазақ ақыны, философ және ағартушы Абай Құнанбаевтың философиялық ой-пікірлері мен адамгершілік насихаттарының жинағы.",
+      "ru": "Сборник философских размышлений и моральных наставлений великого казахского поэта, философа и просветителя Абая Кунанбаева.",
+      "en": "A collection of philosophical reflections and moral teachings by the great Kazakh poet, philosopher and educator Abai Kunanbaev."
+    }
   },
   {
     "id": "b514f922-a715-45ec-846e-e51d40e15aa2",
-    "title": "Kemel adam/Кемел адам",
-    "author": "Қайрат Жолдыбайұлы",
-    "genre": "Психология",
+    "title": {
+      "kk": "Кемел адам",
+      "ru": "Кемел адам",
+      "en": "Perfect Man"
+    },
+    "author": {
+      "kk": "Қайрат Жолдыбайұлы",
+      "ru": "Кайрат Жолдыбаев",
+      "en": "Kairat Zholdybaev"
+    },
+    "genre": {
+      "kk": "Психология",
+      "ru": "Психология",
+      "en": "Psychology"
+    },
     "rating": 4,
     "totalCopies": 9,
     "availableCopies": 5,
-    "description": "Автор рассматривает концепцию «кемел адам» — идеального человека, который стремится к духовному и интеллектуальному совершенству.",
+    "description": {
+      "kk": "Автор «кемел адам» концепциясын қарастырады — рухани және интеллектуалдық жетілдіруді көздейтін идеалды адам.",
+      "ru": "Автор рассматривает концепцию «кемел адам» — идеального человека, который стремится к духовному и интеллектуальному совершенству.",
+      "en": "The author considers the concept of a 'perfect man' - an ideal person who strives for spiritual and intellectual improvement."
+    },
     "coverColor": "#ffffff",
     "coverUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShRgK7cWR_-7UAPFDCWREKZdeRz4eSeSncOg&s",
     "videoUrl": "https://www.youtube.com/watch?v=w5VQZsHnaPM&t=9s",
-    "summary": "Автор рассматривает концепцию «кемел адам» — идеального человека, который стремится к духовному и интеллектуальному совершенству."
+    "summary": {
+      "kk": "Автор «кемел адам» концепциясын қарастырады — рухани және интеллектуалдық жетілдіруді көздейтін идеалды адам.",
+      "ru": "Автор рассматривает концепцию «кемел адам» — идеального человека, который стремится к духовному и интеллектуальному совершенству.",
+      "en": "The author considers the concept of a 'perfect man' - an ideal person who strives for spiritual and intellectual improvement."
+    }
   },
   {
     "id": "b4ed06bf-02b2-42c4-8886-b3847af02cca",
-    "title": "Менің атым Қожа",
-    "author": "Бердібек Соқпақбаев",
-    "genre": "Детская литература",
+    "title": {
+      "kk": "Менің атым Қожа",
+      "ru": "Меня зовут Кожа",
+      "en": "My Name is Kozha"
+    },
+    "author": {
+      "kk": "Бердібек Соқпақбаев",
+      "ru": "Бердибек Сокпакбаев",
+      "en": "Berdibek Sokpakbaev"
+    },
+    "genre": {
+      "kk": "Балалар әдебиеті",
+      "ru": "Детская литература",
+      "en": "Children's Literature"
+    },
     "rating": 5,
     "totalCopies": 40,
     "availableCopies": 30,
-    "description": "Классическая повесть о мальчике Коже, его детстве, шалостях и стремлении стать хорошим человеком.",
+    "description": {
+      "kk": "Қожа атты бала туралы классикалық повесть, оның балалық шағындағы қызықты оқиғалары, шабыттары және жақсы адам болуға деген ұмтылысы туралы.",
+      "ru": "Классическая повесть о мальчике Коже, его детстве, шалостях и стремлении стать хорошим человеком.",
+      "en": "A classic story about a boy named Kozha, his childhood, pranks and desire to become a good person."
+    },
     "coverColor": "#d89941",
     "coverUrl": "https://static.insales-cdn.com/images/products/1/4594/633573874/%D0%BA%D0%BE%D0%B6%D0%B0_%D0%BF%D0%BE%D0%BA%D0%B5%D1%82%D0%B1%D1%83%D0%BA%D0%BA--min.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=d25NUH3Tn58",
-    "summary": "Добрая и поучительная история о детстве, дружбе и моральных ценностях."
+    "summary": {
+      "kk": "Балалық шақ, достық және адамгершілік құндылықтар туралы жақсы және үлгілі әңгіме.",
+      "ru": "Добрая и поучительная история о детстве, дружбе и моральных ценностях.",
+      "en": "A kind and instructive story about childhood, friendship and moral values."
+    }
   },
   {
     "id": "dc73abc1-8699-4e0a-91b0-a67e80292b9c",
-    "title": "Ақиқаттан аттауға болмайды",
-    "author": "Дінмұхамед Қонаев",
-    "genre": "Биографии, мемуары",
+    "title": {
+      "kk": "Ақиқаттан аттауға болмайды",
+      "ru": "От правды нельзя отказаться",
+      "en": "You Can't Turn Away from the Truth"
+    },
+    "author": {
+      "kk": "Дінмұхамед Қонаев",
+      "ru": "Динмухамед Кунаев",
+      "en": "Dinmukhamed Kunaev"
+    },
+    "genre": {
+      "kk": "Өмірбаяндар, естеліктер",
+      "ru": "Биографии, мемуары",
+      "en": "Biographies, memoirs"
+    },
     "rating": 5,
     "totalCopies": 30,
     "availableCopies": 12,
-    "description": "Книга представляет собой откровенный рассказ о жизни и политической карьере Кунаева, его взглядах на развитие Казахстана в составе СССР, взаимоотношениях с союзными и республиканскими руководителями. Автор делится воспоминаниями о ключевых исторических событиях, вызовах и достижениях своего времени.",
+    "description": {
+      "kk": "Кітапта Қонаевтың өмірі мен саяси мансабы, КСРО құрамында Қазақстанның дамуына қатысты көзқарастары, одақтық және республикалық көшбасшылармен қарым-қатынасы туралы ашық әңгімелер берілген. Автор өз кезеңіндегі маңызды тарихи оқиғалар, қиындықтар және жетістіктер туралы естеліктерін бөліседі.",
+      "ru": "Книга представляет собой откровенный рассказ о жизни и политической карьере Кунаева, его взглядах на развитие Казахстана в составе СССР, взаимоотношениях с союзными и республиканскими руководителями. Автор делится воспоминаниями о ключевых исторических событиях, вызовах и достижениях своего времени.",
+      "en": "The book is a frank story about Kunaev's life and political career, his views on the development of Kazakhstan as part of the USSR, relations with allied and republican leaders. The author shares memories of key historical events, challenges and achievements of his time."
+    },
     "coverColor": "#d96113",
     "coverUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFnpeO0XCC0oFNurueR3QknKBw2P1Uak6QzQ&s",
     "videoUrl": "https://www.youtube.com/watch?v=zLqXYXJ65P8",
-    "summary": "Книга представляет собой откровенный рассказ о жизни и политической карьере Кунаева, его взглядах на развитие Казахстана в составе СССР, взаимоотношениях с союзными и республиканскими руководителями. Автор делится воспоминаниями о ключевых исторических событиях, вызовах и достижениях своего времени."
+    "summary": {
+      "kk": "Кітапта Қонаевтың өмірі мен саяси мансабы, КСРО құрамында Қазақстанның дамуына қатысты көзқарастары, одақтық және республикалық көшбасшылармен қарым-қатынасы туралы ашық әңгімелер берілген.",
+      "ru": "Книга представляет собой откровенный рассказ о жизни и политической карьере Кунаева, его взглядах на развитие Казахстана в составе СССР, взаимоотношениях с союзными и республиканскими руководителями.",
+      "en": "The book is a frank story about Kunaev's life and political career, his views on the development of Kazakhstan as part of the USSR, relations with allied and republican leaders."
+    }
   },
   {
     "id": "17a58b62-0258-45a5-8b8b-9a21a6d6630c",
-    "title": "Ұшқан ұя",
-    "author": "Бауыржан Момышулы",
-    "genre": "Казахская Классика",
+    "title": {
+      "kk": "Ұшқан ұя",
+      "ru": "Улетающее гнездо",
+      "en": "The Flying Nest"
+    },
+    "author": {
+      "kk": "Бауыржан Момышулы",
+      "ru": "Бауыржан Момышулы",
+      "en": "Baurzhan Momyshuly"
+    },
+    "genre": {
+      "kk": "Қазақ классикасы",
+      "ru": "Казахская классика",
+      "en": "Kazakh Classic"
+    },
     "rating": 4,
     "totalCopies": 40,
     "availableCopies": 25,
-    "description": "Книга рассказывает о детстве автора, проведенном в традиционной казахской семье. Через воспоминания о родителях, бабушке и дедушке раскрываются нравственные устои, обычаи, семейные ценности и жизненная философия казахского народа.",
+    "description": {
+      "kk": "Кітапта автордың дәстүрлі қазақ отбасында өткен балалық шағы баяндалады. Ата-аналары, әжесі мен атасы туралы естеліктер арқылы қазақ халқының адамгершілік қағидалары, әдет-ғұрыптары, отбасылық құндылықтары және өмірлік философиясы ашылады.",
+      "ru": "Книга рассказывает о детстве автора, проведенном в традиционной казахской семье. Через воспоминания о родителях, бабушке и дедушке раскрываются нравственные устои, обычаи, семейные ценности и жизненная философия казахского народа.",
+      "en": "The book tells about the author's childhood spent in a traditional Kazakh family. Through memories of parents, grandmother and grandfather, the moral principles, customs, family values and life philosophy of the Kazakh people are revealed."
+    },
     "coverColor": "#01be81",
     "coverUrl": "https://tengrinews.kz/userdata/u398/2023-07/resize/af293a8d5c9b6f4e3e401cad748c87b5.jpeg",
     "videoUrl": "https://www.youtube.com/watch?v=MiZtCtENUF0",
-    "summary": "Книга рассказывает о детстве автора, проведенном в традиционной казахской семье. Через воспоминания о родителях, бабушке и дедушке раскрываются нравственные устои, обычаи, семейные ценности и жизненная философия казахского народа."
+    "summary": {
+      "kk": "Кітапта автордың дәстүрлі қазақ отбасында өткен балалық шағы баяндалады. Ата-аналары, әжесі мен атасы туралы естеліктер арқылы қазақ халқының адамгершілік қағидалары, әдет-ғұрыптары, отбасылық құндылықтары және өмірлік философиясы ашылады.",
+      "ru": "Книга рассказывает о детстве автора, проведенном в традиционной казахской семье. Через воспоминания о родителях, бабушке и дедушке раскрываются нравственные устои, обычаи, семейные ценности и жизненная философия казахского народа.",
+      "en": "The book tells about the author's childhood spent in a traditional Kazakh family. Through memories of parents, grandmother and grandfather, the moral principles, customs, family values and life philosophy of the Kazakh people are revealed."
+    }
   },
   {
     "id": "91445e57-01a8-4e1e-bb18-cf04b3a0b7d1",
-    "title": "Бейсен және болмыс",
-    "author": "Керімбай С., Құспан А.",
-    "genre": "Психология популярная",
+    "title": {
+      "kk": "Бейсен және болмыс",
+      "ru": "Бейсен и судьба",
+      "en": "Beisen and Destiny"
+    },
+    "author": {
+      "kk": "Керімбай С., Құспан А.",
+      "ru": "Керимбай С., Куспан А.",
+      "en": "Kerimbay S., Kuspán A."
+    },
+    "genre": {
+      "kk": "Психология",
+      "ru": "Психология популярная",
+      "en": "Popular Psychology"
+    },
     "rating": 5,
     "totalCopies": 25,
     "availableCopies": 3,
-    "description": "Книга представляет собой сборник воспоминаний, размышлений и жизненных принципов Бейсен Құранбек. Она основана на его интервью, записях, а также на рассказах его друзей, коллег и близких людей. Особое внимание уделяется его взглядам на человеческие ценности, добро, честность, ответственность перед обществом и стремление помогать людям.",
+    "description": {
+      "kk": "Кітап Бейсен Құранбектің естеліктері, ой-пікірлері және өмірлік принциптерінің жинағы болып табылады. Ол оның сұхбаттарына, жазбаларына, сондай-ақ достарының, әріптестерінің және жақын адамдарының әңгімелеріне негізделген. Ерекше назар адамдық құндылықтарға, жақсылыққа, адалдыққа, қоғам алдындағы жауапкершілікке және адамдарға көмектесуге деген ұмтылысына аударылады.",
+      "ru": "Книга представляет собой сборник воспоминаний, размышлений и жизненных принципов Бейсен Құранбек. Она основана на его интервью, записях, а также на рассказах его друзей, коллег и близких людей. Особое внимание уделяется его взглядам на человеческие ценности, добро, честность, ответственность перед обществом и стремление помогать людям.",
+      "en": "The book is a collection of memories, reflections and life principles of Beisen Kuránbek. It is based on his interviews, records, as well as stories from his friends, colleagues and close people. Special attention is paid to his views on human values, goodness, honesty, responsibility to society and the desire to help people."
+    },
     "coverColor": "#d5b67b",
     "coverUrl": "https://resources.cdn-kaspi.kz/img/m/p/h02/h88/85767456817182.jpg?format=gallery-medium",
     "videoUrl": "https://www.youtube.com/watch?v=oipCGdXR2EE",
-    "summary": "Книга представляет собой сборник воспоминаний, размышлений и жизненных принципов Бейсен Құранбек. Она основана на его интервью, записях, а также на рассказах его друзей, коллег и близких людей. Особое внимание уделяется его взглядам на человеческие ценности, добро, честность, ответственность перед обществом и стремление помогать людям."
+    "summary": {
+      "kk": "Кітап Бейсен Құранбектің естеліктері, ой-пікірлері және өмірлік принциптерінің жинағы болып табылады. Ол оның сұхбаттарына, жазбаларына, сондай-ақ достарының, әріптестерінің және жақын адамдарының әңгімелеріне негізделген.",
+      "ru": "Книга представляет собой сборник воспоминаний, размышлений и жизненных принципов Бейсен Құранбек. Она основана на его интервью, записях, а также на рассказах его друзей, коллег и близких людей.",
+      "en": "The book is a collection of memories, reflections and life principles of Beisen Kuránbek. It is based on his interviews, records, as well as stories from his friends, colleagues and close people."
+    }
   },
   {
     "id": "c3f2ff59-a3c2-47d2-a793-93457a9dccf7",
-    "title": "Ботагоз",
-    "author": "Сабит Муканов",
-    "genre": "Драма",
+    "title": {
+      "kk": "Ботагөз",
+      "ru": "Ботагоз",
+      "en": "Botagoz"
+    },
+    "author": {
+      "kk": "Сабит Мұқанов",
+      "ru": "Сабит Муканов",
+      "en": "Sabit Mukanov"
+    },
+    "genre": {
+      "kk": "Драма",
+      "ru": "Драма",
+      "en": "Drama"
+    },
     "rating": 5,
     "totalCopies": 10,
     "availableCopies": 5,
-    "description": "В центре повествования — Среднеазиатское восстание 1916 года. Это история о том, как казахский народ сделал важный шаг к своей независимости.",
+    "description": {
+      "kk": "Шығарманың орталығында — 1916 жылғы Орта Азия көтерілісі. Бұл қазақ халқының тәуелсіздігіне қарай атқан маңызды қадамы туралы әңгіме.",
+      "ru": "В центре повествования — Среднеазиатское восстание 1916 года. Это история о том, как казахский народ сделал важный шаг к своей независимости.",
+      "en": "At the center of the narrative is the 1916 Central Asian uprising. This is a story about how the Kazakh people took an important step towards their independence."
+    },
     "coverColor": "#46605f",
     "coverUrl": "https://harpersbazaar.kz/wp-content/uploads/2022/06/sabit_mukanov__botagoz-1.jpeg",
     "videoUrl": "https://www.youtube.com/watch?v=m9P7CV0uZHQ",
-    "summary": "В центре повествования — Среднеазиатское восстание 1916 года. Это история о том, как казахский народ сделал важный шаг к своей независимости."
+    "summary": {
+      "kk": "Шығарманың орталығында — 1916 жылғы Орта Азия көтерілісі. Бұл қазақ халқының тәуелсіздігіне қарай атқан маңызды қадамы туралы әңгіме.",
+      "ru": "В центре повествования — Среднеазиатское восстание 1916 года. Это история о том, как казахский народ сделал важный шаг к своей независимости.",
+      "en": "At the center of the narrative is the 1916 Central Asian uprising. This is a story about how the Kazakh people took an important step towards their independence."
+    }
+  },
+  {
+    "id": "f3a2b0d4-1c5e-4c7b-8f6d-9a2e0f3b5c8d",
+    "title": {
+      "kk": "Тар жол, тайғақ кешу",
+      "ru": "Тар жол, тайгак кешу",
+      "en": "Narrow Path, Difficult Crossing"
+    },
+    "author": {
+      "kk": "Бауыржан Момышұлы",
+      "ru": "Бауыржан Момышулы",
+      "en": "Baurzhan Momyshuly"
+    },
+    "genre": {
+      "kk": "Естеліктер",
+      "ru": "Мемуары",
+      "en": "Memoirs"
+    },
+    "rating": 5,
+    "totalCopies": 15,
+    "availableCopies": 7,
+    "description": {
+      "kk": "'Тар жол, тайғақ кешу' - Бауыржан Момышұлының Ұлы Отан соғысындағы ерлігі мен жауынгерлік жолын баяндайтын естелік кітабы. Автордың әскери тактикасы, жауынгерлік рухы және қазақ халқының батырлығы туралы терең ойлары бар.",
+      "ru": "'Тар жол, тайгак кешу' - мемуары Бауыржана Момышулы о его героизме и военном пути во время Великой Отечественной войны. В книге содержатся глубокие мысли автора о военной тактике, боевом духе и мужестве казахского народа.",
+      "en": "'Narrow Path, Difficult Crossing' is a memoir by Baurzhan Momyshuly about his heroism and military path during the Great Patriotic War. The book contains deep thoughts of the author about military tactics, fighting spirit and courage of the Kazakh people."
+    },
+    "coverColor": "#630d0b",
+    "coverUrl": "https://adebiportal.kz/storage/upload/iblock/eb9/eb97189b1bbf79b235456c91c416ba5a.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=m9P7CV0uZHQ",
+    "summary": {
+      "kk": "'Тар жол, тайғақ кешу' - Бауыржан Момышұлының Ұлы Отан соғысындағы ерлігі мен жауынгерлік жолын баяндайтын естелік кітабы. Автордың әскери тактикасы, жауынгерлік рухы және қазақ халқының батырлығы туралы терең ойлары бар.",
+      "ru": "'Узкая дорога, скользкий путь' - мемуары Бауыржана Момышулы о его героизме и военном пути во время Великой Отечественной войны. В книге содержатся глубокие мысли автора о военной тактике, боевом духе и мужестве казахского народа.",
+      "en": "'Narrow Path, Difficult Crossing' is a memoir by Baurzhan Momyshuly about his heroism and military path during the Great Patriotic War. The book contains deep thoughts of the author about military tactics, fighting spirit and courage of the Kazakh people."
+    }
   }
 ]

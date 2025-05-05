@@ -60,7 +60,21 @@
       "titleSignUp": "Ошибка регистрации"
     }
   },
+  "Header": {
+    "home": "Главная",
+    "search": "Поиск",
+    "DropDownMenu": {
+      "profile": "Мой профиль",
+      "admin": "Админ-панель",
+      "logout": "Выйти"
+    }
+  },
   "HomePage": {
     "newBooks": "Новые книги"
+  },
+  "Search": {},
+  "BookOverview": {
+    "borrowingEligibilityTrue": "Книга недоступна для бронирования",
+    "borrowingEligibilityFalse": "Вам отказано в бронировании"
   }
 }

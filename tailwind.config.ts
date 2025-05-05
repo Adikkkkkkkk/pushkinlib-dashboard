@@ -55,7 +55,7 @@ export default {
           '5': 'hsl(var(--chart-5))',
         },
         primary: {
-          DEFAULT: '#E7C9A5',
+          DEFAULT: '#258B58',
           admin: '#258B58',
         },
         green: {
@@ -75,7 +75,8 @@ export default {
           100: '#0089F1',
         },
         light: {
-          100: '#D6E0FF',
+          DEFAULT: '#DBDBDB',
+          100: '#313131',
           200: '#EED1AC',
           300: '#F8F8FF',
           400: '#EDF1F1',
@@ -107,7 +108,7 @@ export default {
         sm: 'calc(var(--radius) - 4px)',
       },
       backgroundImage: {
-        pattern: "url('/images/pattern.webp')",
+        pattern: "url('/images/pattern-white.jpg')",
       },
     },
   },

@@ -1,11 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { logout } from '@/lib/actions/logout';
-import { getInitials } from '@/lib/utils';
+import { getInitials, getName } from '@/lib/utils';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
+import { useTranslations } from 'next-intl';
 
 const DropdownMenu = ({
   currentLocale,
@@ -16,7 +17,25 @@ const DropdownMenu = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
+  const t = useTranslations('Header.DropDownMenu');
+
+  // Закрытие при клике вне меню
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  // Получение isAdmin
   useEffect(() => {
     const fetchAdminStatus = async () => {
       try {
@@ -34,29 +53,33 @@ const DropdownMenu = ({
   }, []);
 
   return (
-    <div className="relative">
-      <Avatar
-        className="cursor-pointer transition-all duration-200 ease-in-out hover:border-4 hover:bg-white"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <AvatarFallback className="bg-amber-100">
+    <div
+      ref={menuRef}
+      className="relative flex items-center justify-center gap-1.5 cursor-pointer"
+      onClick={() => setIsOpen((prev) => !prev)}
+    >
+      <Avatar className="transition-all duration-200 ease-in-out hover:border-4 hover:bg-white">
+        <AvatarFallback className="bg-primary text-primary-500 text-white">
           {getInitials(userName || 'IN')}
         </AvatarFallback>
       </Avatar>
 
+      <p className="font-semibold text-dark-100 transition-all duration-200 ease-in-out hover:text-dark-300">
+        {getName(userName || 'User')}
+      </p>
+
       <div
-        className={`
-      absolute right-0 z-50 mt-2 w-48 rounded-lg bg-amber-100 text-center shadow-lg transition-all duration-300 ease-out
-      ${isOpen ? 'opacity-100 scale-100 visible' : 'pointer-events-none invisible scale-95 opacity-0'}
-    `}
+        className={`absolute top-10 -right-10 z-50 mt-2 w-48 rounded-lg bg-primary text-white text-center shadow-lg transition-all duration-300 ease-out
+        ${isOpen ? 'opacity-100 scale-100 visible' : 'pointer-events-none invisible scale-95 opacity-0'}
+      `}
       >
         <ul className="p-2 space-y-1">
           <li>
             <Link
               href={`/${currentLocale}/my-profile`}
-              className="block rounded-lg px-4 py-2 hover:bg-gray-100"
+              className="block rounded-lg px-4 py-2 hover:bg-green-900"
             >
-              Мой профиль
+              {t('profile')}
             </Link>
           </li>
 
@@ -64,9 +87,9 @@ const DropdownMenu = ({
             <li>
               <Link
                 href={`/${currentLocale}/admin`}
-                className="block rounded-lg px-4 py-2 font-medium text-green-700 hover:bg-green-100"
+                className="block rounded-lg px-4 py-2 hover:bg-green-900"
               >
-                Админ-панель
+                {t('admin')}
               </Link>
             </li>
           )}
@@ -75,9 +98,9 @@ const DropdownMenu = ({
             <form action={logout}>
               <Button
                 variant="ghost"
-                className="w-full px-4 py-2 text-left text-red-500 hover:bg-red-100"
+                className="w-full px-4 py-2 text-left text-red-300 hover:bg-red-100"
               >
-                Выйти
+                {t('logout')}
               </Button>
             </form>
           </li>

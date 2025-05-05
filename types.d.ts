@@ -1,16 +1,16 @@
 interface Book {
   id: string;
-  title: string;
-  author: string;
-  genre: string;
+  title: Record<'kk' | 'ru' | 'en', string>;
+  author: Record<'kk' | 'ru' | 'en', string>;
+  genre: Record<'kk' | 'ru' | 'en', string>;
   rating: number;
   totalCopies: number;
   availableCopies: number;
-  description: string;
+  description: Record<'kk' | 'ru' | 'en', string>;
+  summary: Record<'kk' | 'ru' | 'en', string>;
   coverColor: string;
   coverUrl: string;
   videoUrl: string;
-  summary: string;
   createdAt: Date | null;
 }
 

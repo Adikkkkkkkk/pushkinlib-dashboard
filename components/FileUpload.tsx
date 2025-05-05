@@ -62,11 +62,9 @@ const FileUpload = ({
 
   const styles = {
     button:
-      variant === 'dark'
-        ? 'bg-dark-300'
-        : 'bg-light-600 border-gray-100 border',
-    placeholder: variant === 'dark' ? 'text-light-100' : 'text-slate-500',
-    text: variant === 'dark' ? 'text-light-100' : 'text-dark-500',
+      variant === 'dark' ? 'bg-dark-300' : 'bg-light border-gray-100 border',
+    placeholder: variant === 'dark' ? 'text-light-700' : 'text-light-100',
+    text: variant === 'dark' ? 'text-white' : 'text-dark-100',
   };
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -8,16 +8,19 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { Button } from './ui/button';
 
+interface Props extends Book {
+  locale: 'kk' | 'ru' | 'en';
+}
+
 const BookCard = ({
   id,
   title,
   genre,
   coverColor,
   coverUrl,
+  locale,
   isLoanedBook = false,
-}: Book) => {
-  const locale = useLocale();
-
+}: Props) => {
   return (
     <li className={cn(isLoanedBook && 'xs:w-52 w-full')}>
       <Link
@@ -27,8 +30,8 @@ const BookCard = ({
         <BookCover coverColor={coverColor} coverImage={coverUrl} />
 
         <div className={cn('mt-4', !isLoanedBook && 'xs:w-40 max-w-28')}>
-          <p className="book-title">{title}</p>
-          <p className="book-genre">{genre}</p>
+          <p className="book-title">{title[locale]}</p>
+          <p className="book-genre">{genre[locale]}</p>
         </div>
 
         {isLoanedBook && (

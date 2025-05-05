@@ -71,8 +71,14 @@ const BorrowBook = ({ userId, bookId, borrowingEligibility }: Props) => {
       onClick={handleBorrowBook}
       disabled={borrowing}
     >
-      <Image src="/icons/book.svg" alt="book" width={20} height={20} />
-      <p className="font-bebas-neue text-xl uppercase text-dark-100">
+      <Image
+        src="/icons/book.svg"
+        alt="book"
+        width={20}
+        height={20}
+        className="invert brightness-0"
+      />
+      <p className="font-bebas-neue text-xl uppercase text-white">
         {borrowing ? 'Бронирование...' : 'Забронировать книгу'}
       </p>
     </Button>

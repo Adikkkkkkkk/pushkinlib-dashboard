@@ -1,18 +1,80 @@
 {
-  "HomePage": {
-    "newBooks": "Жаңа кітаптар",
-    "about": "Біз туралы бетке өту"
-  },
   "AuthForm": {
-    "greeting": {
-      "titleSignIn": "Қош келдіңіз!",
-      "titleSignUp": "Жаңа аккаунт тіркелу"
+    "signIn": {
+      "greeting": {
+        "title": "Добро пожаловать!",
+        "subtitle": "Получите доступ к обширной коллекции ресурсов и будьте в курсе всех событий"
+      },
+      "email": {
+        "label": "Электронная почта",
+        "placeholder": "Введите адрес электронной почты"
+      },
+      "password": {
+        "label": "Пароль",
+        "placeholder": "Введите пароль"
+      },
+      "button": {
+        "text": "Войти"
+      },
+      "noAccount": {
+        "text": "Нет аккаунта?",
+        "link": "Зарегистрироваться"
+      }
+    },
+    "signUp": {
+      "greeting": {
+        "title": "Создайте новый аккаунт",
+        "subtitle": "Заполните все поля и введите номер своего пропуска для доступа к библиотеке"
+      },
+      "email": {
+        "label": "Электронная почта",
+        "placeholder": "Введите адрес электронной почты"
+      },
+      "password": {
+        "label": "Пароль",
+        "placeholder": "Введите пароль"
+      },
+      "libraryCard": {
+        "label": "Номер читательского билета",
+        "placeholder": "Введите номер читательского билета"
+      },
+      "libraryCardImage": {
+        "label": "Фото читательского билета",
+        "placeholder": "Загрузите фото читательского билета"
+      },
+      "button": {
+        "text": "Зарегистрироваться"
+      },
+      "noAccount": {
+        "text": "Уже есть аккаунт?",
+        "link": "Войти"
+      }
     },
     "susscessToast": {
-      "title": "Cәтті",
-      "descriptionSignIn": "Сіз сәтті кірдіңіз",
-      "descriptionSignUp": "Сіз сәтті тіркелдіңіз"
+      "title": "Успешно",
+      "descriptionSignIn": "Вы успешно вошли",
+      "descriptionSignUp": "Вы успешно зарегистрировались"
     },
-    "errorToast": {}
+    "errorToast": {
+      "titleSignIn": "Ошибка входа",
+      "titleSignUp": "Ошибка регистрации"
+    }
+  },
+  "Header": {
+    "home": "Главная",
+    "search": "Поиск",
+    "DropDownMenu": {
+      "profile": "Мой профиль",
+      "admin": "Админ-панель",
+      "logout": "Выйти"
+    }
+  },
+  "HomePage": {
+    "newBooks": "Новые книги"
+  },
+  "Search": {},
+  "BookOverview": {
+    "borrowingEligibilityTrue": "Книга недоступна для бронирования",
+    "borrowingEligibilityFalse": "Вам отказано в бронировании"
   }
 }

@@ -7,6 +7,7 @@ import {
   pgEnum,
   date,
   timestamp,
+  json,
 } from 'drizzle-orm/pg-core';
 
 export const STATUS_ENUM = pgEnum('status', [
@@ -36,18 +37,32 @@ export const users = pgTable('users', {
 });
 
 export const books = pgTable('books', {
-  id: uuid('id').notNull().primaryKey().defaultRandom().unique(),
-  title: varchar('title', { length: 255 }).notNull(),
-  author: varchar('author', { length: 255 }).notNull(),
-  genre: text('genre').notNull(),
+  id: uuid('id').primaryKey().notNull().defaultRandom().unique(),
+
+  title: json('title')
+    .notNull()
+    .$type<{ kk: string; ru: string; en: string }>(),
+  author: json('author')
+    .notNull()
+    .$type<{ kk: string; ru: string; en: string }>(),
+  genre: json('genre')
+    .notNull()
+    .$type<{ kk: string; ru: string; en: string }>(),
+  description: json('description')
+    .notNull()
+    .$type<{ kk: string; ru: string; en: string }>(),
+  summary: json('summary')
+    .notNull()
+    .$type<{ kk: string; ru: string; en: string }>(),
+
   rating: integer('rating').notNull(),
-  coverUrl: text('cover_url').notNull(),
-  coverColor: varchar('cover_color', { length: 7 }).notNull(),
-  description: text('description').notNull(),
   totalCopies: integer('total_copies').notNull().default(1),
   availableCopies: integer('available_copies').notNull().default(1),
+
+  coverUrl: text('cover_url').notNull(),
+  coverColor: text('cover_color').notNull(),
   videoUrl: text('video_url').notNull(),
-  summary: varchar('summary').notNull(),
+
   createdAt: timestamp('created_at', { withTimezone: true }).defaultNow(),
 });
 

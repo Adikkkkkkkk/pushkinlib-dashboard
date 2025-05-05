@@ -1,22 +1,37 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { Button } from './ui/button';
 
 const locales = [
+  { code: 'kk', label: 'Қазақ' },
   { code: 'ru', label: 'Русский' },
-  { code: 'kk', label: 'Қазақша' },
   { code: 'en', label: 'English' },
 ];
 
 const LanguageSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
   const pathname = usePathname();
   const router = useRouter();
 
   const currentLocale = pathname?.split('/')[1] || 'ru';
   const restOfPath = pathname?.split('/').slice(2).join('/') || '';
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const changeLocale = (newLocale: string) => {
     router.replace(`/${newLocale}/${restOfPath}`);
@@ -24,48 +39,34 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <div className="relative">
+    <div ref={menuRef} className="relative cursor-pointer">
       <Button
         variant="default"
-        onClick={() => setIsOpen(!isOpen)}
-        className="rounded-md border border-amber-200 px-3 py-2 hover:bg-amber-100"
+        onClick={() => setIsOpen((prev) => !prev)}
+        className="rounded-md px-3 py-2 text-white hover:bg-green-700"
       >
         {locales.find((l) => l.code === currentLocale)?.label || '🌐 Язык'}
       </Button>
 
-      {isOpen && (
-        <div className="animate-fade-in absolute right-0 z-50 mt-2 w-40 rounded-lg bg-amber-100 text-center shadow-lg">
-          <ul className="p-2 space-y-1">
-            {locales.map(({ code, label }) => (
-              <li key={code}>
-                <button
-                  onClick={() => changeLocale(code)}
-                  className="w-full px-4 py-2 text-left hover:bg-gray-100"
-                >
-                  {label}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      <style jsx>{`
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-            transform: translateY(-5px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-fade-in {
-          animation: fade-in 0.3s ease-in-out forwards;
-        }
-      `}</style>
+      <div
+        className={`
+          absolute top-10 right-0 z-50 mt-2 w-40 rounded-lg bg-primary text-white text-center shadow-lg transition-all duration-300 ease-out
+          ${isOpen ? 'opacity-100 scale-100 visible' : 'pointer-events-none invisible scale-95 opacity-0'}
+        `}
+      >
+        <ul className="p-2 space-y-1">
+          {locales.map(({ code, label }) => (
+            <li key={code}>
+              <button
+                onClick={() => changeLocale(code)}
+                className="w-full rounded-lg px-4 py-2 text-left hover:bg-green-900 hover:text-white"
+              >
+                {label}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
