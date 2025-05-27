@@ -1,6 +1,80 @@
 {
+  "AuthForm": {
+    "signIn": {
+      "greeting": {
+        "title": "Welcome!",
+        "subtitle": "Access a vast collection of resources and stay updated on all events"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter email address"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Enter password"
+      },
+      "button": {
+        "text": "Sign In"
+      },
+      "noAccount": {
+        "text": "No account?",
+        "link": "Sign Up"
+      }
+    },
+    "signUp": {
+      "greeting": {
+        "title": "Create a new account",
+        "subtitle": "Fill in all fields and enter your library card number to access the library"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter email address"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Enter password"
+      },
+      "libraryCard": {
+        "label": "Library Card Number",
+        "placeholder": "Enter library card number"
+      },
+      "libraryCardImage": {
+        "label": "Library Card Image",
+        "placeholder": "Upload library card image"
+      },
+      "button": {
+        "text": "Sign Up"
+      },
+      "noAccount": {
+        "text": "Already have an account?",
+        "link": "Sign In"
+      }
+    },
+    "susscessToast": {
+      "title": "Success",
+      "descriptionSignIn": "You have successfully signed in",
+      "descriptionSignUp": "You have successfully signed up"
+    },
+    "errorToast": {
+      "titleSignIn": "Sign-in Error",
+      "titleSignUp": "Sign-up Error"
+    }
+  },
+  "Header": {
+    "home": "Home",
+    "search": "Search",
+    "DropDownMenu": {
+      "profile": "My Profile",
+      "admin": "Admin Panel",
+      "logout": "Logout"
+    }
+  },
   "HomePage": {
-    "newBooks": "New books",
-    "about": "Go to the about page"
+    "newBooks": "New Books"
+  },
+  "Search": {},
+  "BookOverview": {
+    "borrowingEligibilityTrue": "Book is not available for reservation",
+    "borrowingEligibilityFalse": "You have been denied reservation"
   }
 }

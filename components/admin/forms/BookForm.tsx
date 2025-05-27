@@ -14,37 +14,35 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { useRouter } from 'next/navigation';
-import { bookSchema } from '@/lib/validations';
 import { Textarea } from '@/components/ui/textarea';
 import FileUpload from '@/components/FileUpload';
 import ColorPicker from '../СolorPicker';
 import { createBook } from '@/lib/admin/actions/book';
 import { toast } from '@/hooks/use-toast';
+import { usePathname } from 'next/navigation';
 
-interface Props extends Partial<Book> {
-  type: 'create' | 'update';
-}
-
-const BookForm = ({ type, ...book }: Props) => {
+const BookForm = () => {
   const router = useRouter();
+  const pathname = usePathname();
+  const currentLocale = pathname?.split('/')[1] || 'ru';
 
-  const form = useForm<z.infer<typeof bookSchema>>({
-    resolver: zodResolver(bookSchema),
+  const form = useForm({
+    resolver: zodResolver(z.any()),
     defaultValues: {
-      title: '',
-      description: '',
-      author: '',
-      genre: '',
+      title: { kk: '', ru: '', en: '' },
+      author: { kk: '', ru: '', en: '' },
+      genre: { kk: '', ru: '', en: '' },
+      description: { kk: '', ru: '', en: '' },
+      summary: { kk: '', ru: '', en: '' },
       rating: 1,
       totalCopies: 1,
       coverUrl: '',
       coverColor: '',
       videoUrl: '',
-      summary: '',
     },
   });
 
-  const onSubmit = async (values: z.infer<typeof bookSchema>) => {
+  const onSubmit = async (values) => {
     const result = await createBook(values);
 
     if (result.success) {
@@ -52,8 +50,7 @@ const BookForm = ({ type, ...book }: Props) => {
         title: 'Успешно!',
         description: 'Книга была успешно добавлена в библиотеку.',
       });
-
-      router.push(`/admin/books/${result.data.id}`);
+      router.push(`${result.data.id}`);
     } else {
       toast({
         title: 'Ошибка!',
@@ -63,71 +60,40 @@ const BookForm = ({ type, ...book }: Props) => {
     }
   };
 
+  const renderMultilangFields = (fieldName, label) => {
+    return ['kk', 'ru', 'en'].map((lang) => (
+      <FormField
+        key={`${fieldName}.${lang}`}
+        control={form.control}
+        name={`${fieldName}.${lang}`}
+        render={({ field }) => (
+          <FormItem className="flex flex-col gap-1">
+            <FormLabel className="text-base font-bold text-dark-500">
+              {`${label} (${lang.toUpperCase()})`}
+            </FormLabel>
+            <FormControl>
+              <Input
+                required
+                placeholder={`Введите ${label.toLowerCase()} (${lang})`}
+                {...field}
+                className="book-form_input"
+              />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+    ));
+  };
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <FormField
-          control={form.control}
-          name={'title'}
-          render={({ field }) => (
-            <FormItem className="flex flex-col gap-1">
-              <FormLabel className="text-base font-bold text-dark-500">
-                Название книги
-              </FormLabel>
-              <FormControl>
-                <Input
-                  required
-                  placeholder="Введите название книги"
-                  {...field}
-                  className="book-form_input"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name={'author'}
-          render={({ field }) => (
-            <FormItem className="flex flex-col gap-1">
-              <FormLabel className="text-base font-bold text-dark-500">
-                Автор книги
-              </FormLabel>
-              <FormControl>
-                <Input
-                  required
-                  placeholder="Введите имя автора книги"
-                  {...field}
-                  className="book-form_input"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name={'genre'}
-          render={({ field }) => (
-            <FormItem className="flex flex-col gap-1">
-              <FormLabel className="text-base font-bold text-dark-500">
-                Жанр книги
-              </FormLabel>
-              <FormControl>
-                <Input
-                  required
-                  placeholder="Введите жанр книги"
-                  {...field}
-                  className="book-form_input"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        {renderMultilangFields('title', 'Название книги')}
+        {renderMultilangFields('author', 'Автор книги')}
+        {renderMultilangFields('genre', 'Жанр книги')}
+        {renderMultilangFields('description', 'Описание книги')}
+        {renderMultilangFields('summary', 'Сводка книги')}
 
         <FormField
           control={form.control}
@@ -189,7 +155,7 @@ const BookForm = ({ type, ...book }: Props) => {
                 <FileUpload
                   type="image"
                   accept="image/*"
-                  placeholder="Загрзите URL обложки книги"
+                  placeholder="Загрузите URL обложки книги"
                   folder="books/covers"
                   variant="light"
                   onFileChange={field.onChange}
@@ -222,27 +188,6 @@ const BookForm = ({ type, ...book }: Props) => {
 
         <FormField
           control={form.control}
-          name={'description'}
-          render={({ field }) => (
-            <FormItem className="flex flex-col gap-1">
-              <FormLabel className="text-base font-bold text-dark-500">
-                Описание книги
-              </FormLabel>
-              <FormControl>
-                <Textarea
-                  placeholder="Введите описание книги"
-                  {...field}
-                  rows={10}
-                  className="book-form_input resize-none"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
           name={'videoUrl'}
           render={({ field }) => (
             <FormItem className="flex flex-col gap-1">
@@ -253,32 +198,11 @@ const BookForm = ({ type, ...book }: Props) => {
                 <FileUpload
                   type="video"
                   accept="video/*"
-                  placeholder="Загрзите URL видео"
+                  placeholder="Загрузите URL видео"
                   folder="books/videos"
                   variant="light"
                   onFileChange={field.onChange}
                   value={field.value}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name={'summary'}
-          render={({ field }) => (
-            <FormItem className="flex flex-col gap-1">
-              <FormLabel className="text-base font-bold text-dark-500">
-                Сводка книги
-              </FormLabel>
-              <FormControl>
-                <Textarea
-                  placeholder="Введите сводку книги"
-                  {...field}
-                  rows={5}
-                  className="book-form_input resize-none"
                 />
               </FormControl>
               <FormMessage />
